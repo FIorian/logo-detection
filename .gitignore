@@ -15,3 +15,5 @@ datasets/labels.json
 *~
 activate_env.sh 
 README_draft.md
+.venv/
+cases/
