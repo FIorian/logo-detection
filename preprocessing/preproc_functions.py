@@ -20,9 +20,9 @@ def read_query(dataset_folder, elem_query, y_size, x_size, black_white = False):
         bbox = [int(i) for i in bbox] 
         img = img.crop( (bbox[0], bbox[1], bbox[0] + bbox[2], bbox[1] + bbox[3]) )
 
-    img = img.resize((x_size, y_size), Image.ANTIALIAS)
+    img = img.resize((x_size, y_size), Image.LANCZOS)
     
-    if black_white == True:
+    if black_white:
         img = img.convert('L')
     else:
         img = img.convert('RGB')
@@ -38,9 +38,9 @@ def read_image(dataset_folder, filename, y_size, x_size, black_white = False):
 #    print(fpath)
     img = Image.open(fpath)
     
-    img = img.resize((x_size, y_size), Image.ANTIALIAS)
+    img = img.resize((x_size, y_size), Image.LANCZOS)
     
-    if black_white == True:
+    if black_white:
         img = img.convert('L')
     else:
         img = img.convert('RGB')
@@ -113,7 +113,7 @@ def normalize_0_1(img):
 def zoom_image(img):
 
     x_shift = 20
-    y_shift = 20
+    # y_shift = 20
     
     img = img[x_shift:-x_shift, x_shift:-x_shift, :]
     

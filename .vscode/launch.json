@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "training",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "main.py",
+      // argument reference: "python main.py -c configs/config.yml --train"
+      "args": [
+        "-c",
+        "configs/config.yml",
+        "--train"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Launch",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "main.py",
+      // argument reference: "python main.py -c configs/config.yml --predict --query query_path --image filename_path --output result.jpg"
+      "args": [
+        "-c",
+        "configs/config.yml",
+        "--predict",
+        "--query",
+        "/Users/floriangaeremynck/klad/logo-detection/cases/Nationale_Lotterij.png",
+        "--image",
+        "/Users/floriangaeremynck/klad/logo-detection/cases/test1.png",
+        "--output",
+        "result.jpg"
+      ],
+      "console": "integratedTerminal"
+    }
+  ]
+}
